@@ -1,10 +1,10 @@
 <?php
 /**
- * Plugin Name: WP Mautic
- * Plugin URI: https://github.com/mautic/mautic-wordpress
+ * Plugin Name: WP Mautic NubiSoft
+ * Plugin URI: https://github.com/nubisoft/mautic-wordpress
  * Contributors: mautic,hideokamoto,shulard,escopecz,dbhurley,macbookandrew
  * Description: This plugin will allow you to add Mautic (Free Open Source Marketing Automation) tracking to your site
- * Version: 2.4.3
+ * Version: 2.5.0
  * Requires at least: 4.6
  * Tested up to: 6.1
  * Author: Mautic community
@@ -182,7 +182,7 @@ function wpmautic_inject_script() {
  * @return void
  */
 function wpmautic_inject_noscript() {
-	$base_url = wpmautic_option( 'base_url', '' );
+	$base_url = 'https://m.' . $_SERVER['SERVER_NAME'];
 	if ( empty( $base_url ) ) {
 		return;
 	}

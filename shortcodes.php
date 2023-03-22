@@ -62,7 +62,7 @@ function wpmautic_shortcode( $atts, $content = null ) {
  * @return string
  */
 function wpmautic_form_shortcode( $atts ) {
-	$base_url = wpmautic_option( 'base_url', '' );
+	$base_url = 'https://m.' . $_SERVER['SERVER_NAME'];
 	if ( '' === $base_url ) {
 		return false;
 	}
@@ -79,7 +79,7 @@ function wpmautic_form_shortcode( $atts ) {
 	}
 
 	return '<script type="text/javascript" ' . sprintf(
-		'src="%s/form/generate.js?id=%s" async',
+		'src="%s/form/generate.js?id=%s"',
 		esc_url( $base_url ),
 		esc_attr( $atts['id'] )
 	) . '></script>';
@@ -177,7 +177,7 @@ function wpmautic_video_shortcode( $atts ) {
  * @return string
  */
 function wpmautic_tags_shortcode( $atts ) {
-	$base_url = wpmautic_option( 'base_url', '' );
+	$base_url = 'https://m.' . $_SERVER['SERVER_NAME'];
 	if ( '' === $base_url ) {
 		return false;
 	}
@@ -210,7 +210,7 @@ function wpmautic_tags_shortcode( $atts ) {
  * @return string
  */
 function wpmautic_focus_shortcode( $atts ) {
-	$base_url = wpmautic_option( 'base_url', '' );
+	$base_url = 'https://m.' . $_SERVER['SERVER_NAME'];
 	if ( '' === $base_url ) {
 		return false;
 	}
@@ -227,7 +227,7 @@ function wpmautic_focus_shortcode( $atts ) {
 	}
 
 	return '<script type="text/javascript" ' . sprintf(
-		'src="%s/focus/%s.js" async',
+		'src="%s/focus/%s.js"',
 		esc_url( $base_url ),
 		esc_attr( $atts['id'] )
 	) . ' async="async"></script>';
