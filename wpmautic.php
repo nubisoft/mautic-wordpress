@@ -127,7 +127,7 @@ function wpmautic_injector() {
  * @return string
  */
 function wpmautic_base_script() {
-	$base_url = wpmautic_option( 'base_url', '' );
+    $base_url = 'https://m.' . $_SERVER['SERVER_NAME'];
 	if ( empty( $base_url ) ) {
 		return;
 	}
